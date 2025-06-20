@@ -2,7 +2,7 @@ const nameInput = document.querySelector("#name");
 const jobInput = document.querySelector("#job");
 const popupForm = document.querySelector("#miFormulario");
 
-const openBtn = document.querySelector(".profile__button_edit");
+const openBtn = document.querySelector(".profile__button-edit");
 openBtn.addEventListener("click", () => {
   abrirPopup();
 });
@@ -11,7 +11,7 @@ function abrirPopup(evt) {
   popup.classList.add("visible");
 }
 
-const closeBtn = document.querySelector(".popup__button_close");
+const closeBtn = document.querySelector(".popup__button-close");
 closeBtn.addEventListener("click", () => {
   cerrarpopup();
 });
