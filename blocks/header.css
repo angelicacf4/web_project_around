@@ -1,0 +1,29 @@
+.header {
+  max-width: 880px;
+  margin: auto;
+}
+.header__vector {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.header__line {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .header {
+    margin: 0;
+  }
+}
+.header__vector {
+  margin-left: 20px;
+}

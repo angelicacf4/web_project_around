@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Angélica Cuadros" />
+    <meta name="description" content="Around The U.S." />
+    <meta name="keywords" content="Jacques cousteau Explorador" />
+    <title>Around The U.S.</title>
+    <link rel="shortcut" href="favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!--formulario-->
+      <div id="overlay" class="popup">
+        <div class="popup__container" id="popupcontainer">
+          <form id="miFormulario" class="popup__form">
+            <h2 class="popup__title">Editar perfil</h2>
+            <fieldset class="popup__fieldset">
+              <input
+                type="text"
+                id="name"
+                name="nombre"
+                placeholder="Nombre"
+                class="popup__input"
+              />
+
+              <input
+                type="text"
+                name="Acerca de mi"
+                id="job"
+                placeholder="Acerca de mi"
+                class="popup__input"
+              />
+            </fieldset>
+            <fieldset class="popup__fieldset">
+              <button class="popup__button-save" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+        <button id="closeBtn" class="popup__button_close">&#10006;</button>
+      </div>
+      <header class="header">
+        <img src="images/Title.png" alt="vector" class="header__vector" />
+        <img src="images/Line.png" alt="linea" class="header__line" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            src="images/JacquesCousteau.jpg"
+            alt="imagen de Jacques"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Jacques cousteau</h1>
+            <p class="profile__subtitle">Explorador</p>
+          </div>
+
+          <button id="openBtn" class="profile__button_edit">
+            <img src="images/lapiz.svg" alt="Editar" class="profile__ico" />
+          </button>
+          <div class="profile__button">
+            <button class="profile__button_add">
+              <img src="images/add.svg" alt="add" class="profile__button_ico" />
+            </button>
+          </div>
+        </section>
+        <section class="elements">
+          <ul class="elements__card">
+            <li class="card">
+              <div class="card__content">
+                <img
+                  src="images/ValledeYosemite.jpg"
+                  alt="valle"
+                  class="card__image"
+                />
+                <div class="card__description">
+                  <h3 class="card__text">Valle de Yosemite</h3>
+                  <img
+                    src="images/like.svg"
+                    alt="me encanta"
+                    class="card__icon card__icon-visible"
+                  />
+                  <img
+                    src="images/likelleno.svg"
+                    alt="like lleno"
+                    class="card__icon-black card__icon-hidden"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card__content">
+                <img
+                  src="images/LagoLouise2.jpg"
+                  alt="lago"
+                  class="card__image"
+                />
+                <div class="card__description">
+                  <h3 class="card__text">Lago Louise</h3>
+                  <img
+                    src="images/like.svg"
+                    alt="me encanta"
+                    class="card__icon card__icon-visible"
+                  />
+                  <img
+                    src="images/likelleno.svg"
+                    alt="like lleno"
+                    class="card__icon-black card__icon-hidden"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card__content">
+                <img
+                  src="images/MontañasCalvas 3.jpg"
+                  alt="Montañas"
+                  class="card__image"
+                />
+                <div class="card__description">
+                  <h3 class="card__text">Montañas Calvas</h3>
+                  <img
+                    src="images/like.svg"
+                    alt="me encanta"
+                    class="card__icon card__icon-visible"
+                  />
+                  <img
+                    src="images/likelleno.svg"
+                    alt="like lleno"
+                    class="card__icon-black card__icon-hidden"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card__content">
+                <img
+                  src="images/Latemar4.jpg"
+                  alt="paisaje"
+                  class="card__image"
+                />
+                <div class="card__description">
+                  <h3 class="card__text">Latemar</h3>
+                  <img
+                    src="images/like.svg"
+                    alt="me encanta"
+                    class="card__icon card__icon-visible"
+                  />
+                  <img
+                    src="images/likelleno.svg"
+                    alt="like lleno"
+                    class="card__icon-black card__icon-hidden"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card__content">
+                <img
+                  src="images/VanoisNational5.jpg"
+                  alt="parquenacional"
+                  class="card__image"
+                />
+                <div class="card__description">
+                  <h3 class="card__text">Vanois National</h3>
+                  <img
+                    src="images/like.svg"
+                    alt="me encanta"
+                    class="card__icon card__icon-visible"
+                  /><img
+                    src="images/likelleno.svg"
+                    alt="like lleno"
+                    class="card__icon-black card__icon-hidden"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card__content">
+                <img
+                  src="images/LagodiBraies.jpg"
+                  alt="lago"
+                  class="card__image"
+                />
+                <div class="card__description">
+                  <h3 class="card__text">Lago di Braies</h3>
+                  <img
+                    src="images/like.svg"
+                    alt="me encanta"
+                    class="card__icon card__icon-visible"
+                  />
+                  <img
+                    src="images/like.svg"
+                    alt="like lleno"
+                    class="card__icon-black card__icon-hidden"
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
+      </footer>
+    </div>
+    <script src="scripts.js/index.js"></script>
+  </body>
+</html>

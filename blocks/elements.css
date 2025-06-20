@@ -1,0 +1,91 @@
+.elements {
+  max-width: 880px;
+  margin: auto;
+}
+
+.elements__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.card__image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  display: block;
+}
+
+.card__description {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.card__text {
+  border-bottom-left-radius: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 20px 5px 20px 20px;
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  background-color: white;
+  font-size: 24px;
+}
+
+.card__icon {
+  border: none;
+  background-color: white;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card__icon:hover {
+  opacity: 50%;
+}
+
+.card__icon-black {
+  border: none;
+  background-color: white;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.card__icon-visible {
+  display: block;
+}
+
+.card__icon-hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .elements {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  .elements__card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .elements {
+    margin-left: 20px;
+  }
+  .elements__card {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+}
