@@ -83,8 +83,6 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .popup__button-close {
-  }
   .popup__container {
     width: 40%;
   }
@@ -99,7 +97,7 @@
   }
   .popup__button-close {
     position: fixed;
-    left: 83%;
+    right: 10px;
     bottom: 440px;
   }
 }
