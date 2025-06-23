@@ -12,35 +12,6 @@
   </head>
   <body>
     <div class="page">
-      <!--formulario-->
-      <div id="overlay" class="popup">
-        <div class="popup__container" id="popupcontainer">
-          <form id="miFormulario" class="popup__form">
-            <h2 class="popup__title">Editar perfil</h2>
-            <fieldset class="popup__fieldset">
-              <input
-                type="text"
-                id="name"
-                name="nombre"
-                placeholder="Nombre"
-                class="popup__input"
-              />
-
-              <input
-                type="text"
-                name="Acerca de mi"
-                id="job"
-                placeholder="Acerca de mi"
-                class="popup__input"
-              />
-            </fieldset>
-            <fieldset class="popup__fieldset">
-              <button class="popup__button-save" type="submit">Guardar</button>
-            </fieldset>
-          </form>
-        </div>
-        <button id="closeBtn" class="popup__button-close">&#10006;</button>
-      </div>
       <header class="header">
         <img src="images/Title.png" alt="vector" class="header__vector" />
         <img src="images/Line.png" alt="linea" class="header__line" />
@@ -76,7 +47,7 @@
                   class="card__image"
                 />
                 <div class="card__description">
-                  <h3 class="card__text">Valle de Yosemite</h3>
+                  <h2 class="card__text">Valle de Yosemite</h2>
                   <img
                     src="images/like.svg"
                     alt="me encanta"
@@ -98,7 +69,7 @@
                   class="card__image"
                 />
                 <div class="card__description">
-                  <h3 class="card__text">Lago Louise</h3>
+                  <h2 class="card__text">Lago Louise</h2>
                   <img
                     src="images/like.svg"
                     alt="me encanta"
@@ -120,7 +91,7 @@
                   class="card__image"
                 />
                 <div class="card__description">
-                  <h3 class="card__text">Montañas Calvas</h3>
+                  <h2 class="card__text">Montañas Calvas</h2>
                   <img
                     src="images/like.svg"
                     alt="me encanta"
@@ -142,7 +113,7 @@
                   class="card__image"
                 />
                 <div class="card__description">
-                  <h3 class="card__text">Latemar</h3>
+                  <h2 class="card__text">Latemar</h2>
                   <img
                     src="images/like.svg"
                     alt="me encanta"
@@ -164,7 +135,7 @@
                   class="card__image"
                 />
                 <div class="card__description">
-                  <h3 class="card__text">Vanois National</h3>
+                  <h2 class="card__text">Vanois National</h2>
                   <img
                     src="images/like.svg"
                     alt="me encanta"
@@ -185,7 +156,7 @@
                   class="card__image"
                 />
                 <div class="card__description">
-                  <h3 class="card__text">Lago di Braies</h3>
+                  <h2 class="card__text">Lago di Braies</h2>
                   <img
                     src="images/like.svg"
                     alt="me encanta"
@@ -205,6 +176,35 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
+      <!--formulario-->
+      <div id="overlay" class="popup">
+        <div class="popup__container" id="popupcontainer">
+          <form id="miFormulario" class="popup__form">
+            <h2 class="popup__title">Editar perfil</h2>
+            <fieldset class="popup__fieldset">
+              <input
+                type="text"
+                id="name"
+                name="nombre"
+                placeholder="Nombre"
+                class="popup__input"
+              />
+
+              <input
+                type="text"
+                name="Acerca de mi"
+                id="job"
+                placeholder="Acerca de mi"
+                class="popup__input"
+              />
+            </fieldset>
+            <fieldset class="popup__fieldset">
+              <button class="popup__button-save" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+        <button id="closeBtn" class="popup__button-close">&#10006;</button>
+      </div>
     </div>
     <script src="./scripts/index.js"></script>
   </body>
