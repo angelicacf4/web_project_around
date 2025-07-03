@@ -31,151 +31,20 @@
           <button id="openBtn" class="profile__button-edit">
             <img src="images/lapiz.svg" alt="Editar" class="profile__ico" />
           </button>
-          <div class="profile__button">
+          <div id="addBtn" class="profile__button">
             <button class="profile__button-add">
               <img src="images/add.svg" alt="add" class="profile__button-ico" />
             </button>
           </div>
         </section>
         <section class="elements">
-          <ul class="elements__card">
-            <li class="card">
-              <div class="card__content">
-                <img
-                  src="images/ValledeYosemite.jpg"
-                  alt="valle"
-                  class="card__image"
-                />
-                <div class="card__description">
-                  <h2 class="card__text">Valle de Yosemite</h2>
-                  <img
-                    src="images/like.svg"
-                    alt="me encanta"
-                    class="card__icon card__icon-visible"
-                  />
-                  <img
-                    src="images/likelleno.svg"
-                    alt="like lleno"
-                    class="card__icon-black card__icon-hidden"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__content">
-                <img
-                  src="images/LagoLouise2.jpg"
-                  alt="lago"
-                  class="card__image"
-                />
-                <div class="card__description">
-                  <h2 class="card__text">Lago Louise</h2>
-                  <img
-                    src="images/like.svg"
-                    alt="me encanta"
-                    class="card__icon card__icon-visible"
-                  />
-                  <img
-                    src="images/likelleno.svg"
-                    alt="like lleno"
-                    class="card__icon-black card__icon-hidden"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__content">
-                <img
-                  src="images/MontañasCalvas 3.jpg"
-                  alt="Montañas"
-                  class="card__image"
-                />
-                <div class="card__description">
-                  <h2 class="card__text">Montañas Calvas</h2>
-                  <img
-                    src="images/like.svg"
-                    alt="me encanta"
-                    class="card__icon card__icon-visible"
-                  />
-                  <img
-                    src="images/likelleno.svg"
-                    alt="like lleno"
-                    class="card__icon-black card__icon-hidden"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__content">
-                <img
-                  src="images/Latemar4.jpg"
-                  alt="paisaje"
-                  class="card__image"
-                />
-                <div class="card__description">
-                  <h2 class="card__text">Latemar</h2>
-                  <img
-                    src="images/like.svg"
-                    alt="me encanta"
-                    class="card__icon card__icon-visible"
-                  />
-                  <img
-                    src="images/likelleno.svg"
-                    alt="like lleno"
-                    class="card__icon-black card__icon-hidden"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__content">
-                <img
-                  src="images/VanoisNational5.jpg"
-                  alt="parquenacional"
-                  class="card__image"
-                />
-                <div class="card__description">
-                  <h2 class="card__text">Vanois National</h2>
-                  <img
-                    src="images/like.svg"
-                    alt="me encanta"
-                    class="card__icon card__icon-visible"
-                  /><img
-                    src="images/likelleno.svg"
-                    alt="like lleno"
-                    class="card__icon-black card__icon-hidden"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card__content">
-                <img
-                  src="images/LagodiBraies.jpg"
-                  alt="lago"
-                  class="card__image"
-                />
-                <div class="card__description">
-                  <h2 class="card__text">Lago di Braies</h2>
-                  <img
-                    src="images/like.svg"
-                    alt="me encanta"
-                    class="card__icon card__icon-visible"
-                  />
-                  <img
-                    src="images/like.svg"
-                    alt="like lleno"
-                    class="card__icon-black card__icon-hidden"
-                  />
-                </div>
-              </div>
-            </li>
-          </ul>
+          <ul class="elements__card"></ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
+
       <!--formulario-->
       <div id="overlay" class="popup">
         <div class="popup__container" id="popupcontainer">
@@ -205,7 +74,75 @@
         </div>
         <button id="closeBtn" class="popup__button-close">&#10006;</button>
       </div>
+
+      <!--formulario 2-->
+      <div id="overlayadd" class="popup">
+        <div class="popup__container" id="popupcontaineradd">
+          <form id="formAdd" class="popup__form">
+            <h2 class="popup__title">Nuevo lugar</h2>
+            <fieldset class="popup__fieldset">
+              <input
+                type="text"
+                id="title"
+                name="titulo"
+                placeholder="Titulo"
+                class="popup__input"
+              />
+
+              <input
+                type="url"
+                name="enlace"
+                id="url"
+                placeholder="Enlace a la imagen"
+                class="popup__input"
+              />
+            </fieldset>
+            <fieldset class="popup__fieldset">
+              <button id="saveBtn" class="popup__button-save" type="submit">
+                Crear
+              </button>
+            </fieldset>
+          </form>
+        </div>
+        <button id="deleteBtn" class="popup__button-close">&#10006;</button>
+      </div>
+
+      <!--ventana emergente -->
+      <div id="popupwindow" class="popup">
+        <div class="popup__container" id="popupcontainerwindow">
+          <button class="popup__button-close" id="closewindow">&#10006;</button>
+          <img
+            class="popup__image"
+            id="windowImage"
+            src=""
+            alt="Imagen ampliada"
+          />
+          <h2 class="popup__text" id="textwindow"></h2>
+        </div>
+      </div>
     </div>
+    <template class="template">
+      <li id="openImage" class="card">
+        <div class="card__content">
+          <img src="images/Trash.svg" alt="Trash" class="card__trash" />
+          <img
+            src="images/ValledeYosemite.jpg"
+            alt="valle"
+            id="myImage"
+            class="card__image"
+          />
+          <div class="card__description" id="myText">
+            <h2 class="card__text"></h2>
+            <img
+              src="images/like.svg"
+              alt="me encanta"
+              class="card__like-button"
+            />
+          </div>
+        </div>
+      </li>
+    </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>
