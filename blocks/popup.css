@@ -90,10 +90,13 @@
 }
 
 /*ventana emergente*/
-#popupcontainerwindow {
+#popupwindow {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
   padding: 0;
   border-radius: 0;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -101,23 +104,30 @@
 .popup__image {
   max-width: 75vh;
   max-height: 75vh;
-  width: 433px;
-  height: 544px;
+  width: auto;
+  height: auto;
 }
 .popup__text {
-  color: #000000;
-  font-family: "Inter-black";
-  font-size: 20px;
-  font-weight: normal;
-  max-width: 433;
+  color: white;
+  max-width: 433px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
+#closewindow {
+  padding: 0;
+  bottom: 91%;
+  font-size: 40px;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .popup__container {
     width: 40%;
+  }
+  #closewindow {
+    bottom: 88%;
+    font-size: 30px;
   }
 }
 
@@ -132,5 +142,14 @@
     position: fixed;
     right: 4px;
     top: -183px;
+  }
+  .popup__image {
+    max-width: 45vh;
+    max-height: 45vh;
+  }
+  #closewindow {
+    padding: 25px;
+    bottom: 25%;
+    font-size: 20px;
   }
 }

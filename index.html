@@ -109,15 +109,16 @@
 
       <!--ventana emergente -->
       <div id="popupwindow" class="popup">
-        <div class="popup__container" id="popupcontainerwindow">
-          <button class="popup__button-close" id="closewindow">&#10006;</button>
+        <div class="popup__container-window" id="popupcontainerwindow">
           <img
             class="popup__image"
             id="windowImage"
             src=""
             alt="Imagen ampliada"
           />
-          <h2 class="popup__text" id="textwindow"></h2>
+          <button class="popup__button-close" id="closewindow">&#10006;</button>
+
+          <p class="popup__text" id="imagetitle"></p>
         </div>
       </div>
     </div>
@@ -131,8 +132,8 @@
             id="myImage"
             class="card__image"
           />
-          <div class="card__description" id="myText">
-            <h2 class="card__text"></h2>
+          <div class="card__description">
+            <h2 class="card__text" id="cardtext"></h2>
             <img
               src="images/like.svg"
               alt="me encanta"
