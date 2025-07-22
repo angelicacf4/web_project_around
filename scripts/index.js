@@ -2,23 +2,57 @@ const nameInput = document.querySelector("#name");
 const jobInput = document.querySelector("#job");
 const popupForm = document.querySelector("#miFormulario");
 
+//evento de clic en overlay (fuera del modal)
+const closePopup = document.querySelector(".popup");
+const closeOverlayAdd = document.querySelector("#overlayadd");
+const closePopupWindow = document.querySelector("#popupwindow");
+closePopup.addEventListener("click", (evt) => {
+  console.log(evt.target);
+  if (evt.target === closePopup) {
+    cerrarpopup();
+  }
+});
+closeOverlayAdd.addEventListener("click", (evt) => {
+  console.log(evt.target);
+  if (evt.target === closeOverlayAdd) {
+    cerrarOverlayadd();
+  }
+});
+closePopupWindow.addEventListener("click", (evt) => {
+  console.log(evt.target);
+  if (evt.target === closePopupWindow) {
+    cerrarPopupWindow();
+  }
+});
+
+// Cerrar con tecla ESC
+function closeOnEscape(evt) {
+  if (evt.key === "Escape") {
+    cerrarpopup();
+    cerrarOverlayadd();
+    cerrarPopupWindow();
+  }
+}
+
 //Formulario 1
 const openBtn = document.querySelector(".profile__button-edit");
+// Abir boton lapiz
 openBtn.addEventListener("click", () => {
   abrirPopup();
 });
 function abrirPopup(evt) {
   let popup = document.querySelector(".popup");
   popup.classList.add("visible");
+  document.addEventListener("keydown", closeOnEscape);
 }
-
+// Boton x
 const closeBtn = document.querySelector(".popup__button-close");
 closeBtn.addEventListener("click", () => {
   cerrarpopup();
 });
 
 function cerrarpopup(evt) {
-  let popup = document.querySelector(".popup");
+  const popup = document.querySelector(".popup");
 
   popup.classList.remove("visible");
 }
@@ -79,10 +113,16 @@ initialCards.forEach(function (item) {
   createCard(item.name, item.link);
 });
 
-//ventana emergente
+//Ventana emergente
 function abrirPopupWindow(evt) {
   let popupWindow = document.querySelector("#popupwindow");
   popupWindow.classList.add("visible");
+  document.addEventListener("keydown", closeOnEscape);
+}
+function cerrarPopupWindow(evt) {
+  let popupWindow = document.querySelector("#popupwindow");
+
+  popupWindow.classList.remove("visible");
 }
 
 function createCard(name, link) {
@@ -120,11 +160,6 @@ function createCard(name, link) {
   closeWindow.addEventListener("click", () => {
     cerrarPopupWindow();
   });
-  function cerrarPopupWindow(evt) {
-    let popupWindow = document.querySelector("#popupwindow");
-
-    popupWindow.classList.remove("visible");
-  }
 
   elementsCard.prepend(clonedCard);
 }
@@ -140,6 +175,7 @@ function abrirOverlayAdd(evt) {
   let overlayadd = document.querySelector("#overlayadd");
 
   overlayadd.classList.add("visible");
+  document.addEventListener("keydown", closeOnEscape);
 }
 // Boton x
 const deleteBtn = document.querySelector("#deleteBtn");
@@ -153,7 +189,7 @@ function cerrarOverlayadd(evt) {
   overlayAdd.classList.remove("visible");
 }
 
-//crear nuevas tarjetas
+//Crear nuevas tarjetas
 const titleInput = document.querySelector("#title");
 const urlInput = document.querySelector("#url");
 const formAdd = document.querySelector("#formAdd");

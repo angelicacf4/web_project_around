@@ -41,7 +41,7 @@
 
 .popup__input {
   width: 93%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 9px;
   font-size: 15px;
   border-top: none;
@@ -51,11 +51,25 @@
   border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
+.popup__input_error {
+  color: red;
+  word-break: break-all;
+}
+
 .popup__input:focus-visible {
   border: none;
   outline: none;
   border-bottom: solid;
   border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.popup__input:valid {
+  border-bottom: 1px solid green;
+}
+
+.popup__input:invalid {
+  border-bottom: 1px solid red;
+  outline: none;
 }
 
 .popup__fieldset {
@@ -74,6 +88,15 @@
 
 .popup__button-save:hover {
   opacity: 50%;
+}
+
+.popup__button-save:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.popup__button-save:valid {
+  background-color: black;
 }
 
 .popup__button-close {

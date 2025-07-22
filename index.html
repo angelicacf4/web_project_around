@@ -45,7 +45,7 @@
         <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
 
-      <!--formulario-->
+      <!--formulario 1-->
       <div id="overlay" class="popup">
         <div class="popup__container" id="popupcontainer">
           <form id="miFormulario" class="popup__form">
@@ -57,7 +57,11 @@
                 name="nombre"
                 placeholder="Nombre"
                 class="popup__input"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span class="popup__input_error" id="name-error"></span>
 
               <input
                 type="text"
@@ -65,14 +69,22 @@
                 id="job"
                 placeholder="Acerca de mi"
                 class="popup__input"
+                required
+                minlength="2"
+                maxlength="200"
               />
+              <span class="popup__input_error" id="job-error"></span>
             </fieldset>
             <fieldset class="popup__fieldset">
-              <button class="popup__button-save" type="submit">Guardar</button>
+              <button class="popup__button-save" type="submit" disabled>
+                Guardar
+              </button>
             </fieldset>
           </form>
         </div>
-        <button id="closeBtn" class="popup__button-close">&#10006;</button>
+        <button type="button" id="closeBtn" class="popup__button-close">
+          &#10006;
+        </button>
       </div>
 
       <!--formulario 2-->
@@ -87,24 +99,37 @@
                 name="titulo"
                 placeholder="Titulo"
                 class="popup__input"
+                required
+                minlength="2"
+                maxlength="30"
               />
+              <span class="popup__input_error" id="title-error"></span>
 
               <input
                 type="url"
                 name="enlace"
                 id="url"
-                placeholder="Enlace a la imagen"
+                placeholder="URL de la imagen"
                 class="popup__input"
+                required
               />
+              <span class="popup__input_error" id="url-error"></span>
             </fieldset>
             <fieldset class="popup__fieldset">
-              <button id="saveBtn" class="popup__button-save" type="submit">
+              <button
+                id="saveBtn"
+                class="popup__button-save"
+                type="submit"
+                disabled
+              >
                 Crear
               </button>
             </fieldset>
           </form>
         </div>
-        <button id="deleteBtn" class="popup__button-close">&#10006;</button>
+        <button type="button" id="deleteBtn" class="popup__button-close">
+          &#10006;
+        </button>
       </div>
 
       <!--ventana emergente -->
@@ -113,7 +138,7 @@
           <img
             class="popup__image"
             id="windowImage"
-            src="url()"
+            src=""
             alt="Imagen ampliada"
           />
           <button class="popup__button-close" id="closewindow">&#10006;</button>
@@ -145,5 +170,6 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
