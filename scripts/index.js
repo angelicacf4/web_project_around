@@ -27,6 +27,7 @@ closePopupWindow.addEventListener("click", (evt) => {
 
 // Cerrar con tecla ESC
 function closeOnEscape(evt) {
+  console.log("tecla presionada:", evt.key);
   if (evt.key === "Escape") {
     cerrarpopup();
     cerrarOverlayadd();
@@ -55,6 +56,7 @@ function cerrarpopup(evt) {
   const popup = document.querySelector(".popup");
 
   popup.classList.remove("visible");
+  document.removeEventListener("keydown", closeOnEscape);
 }
 
 function popupcontainer(evt) {
@@ -123,6 +125,7 @@ function cerrarPopupWindow(evt) {
   let popupWindow = document.querySelector("#popupwindow");
 
   popupWindow.classList.remove("visible");
+  document.removeEventListener("keydown", closeOnEscape);
 }
 
 function createCard(name, link) {
@@ -187,6 +190,7 @@ function cerrarOverlayadd(evt) {
   let overlayAdd = document.querySelector("#overlayadd");
 
   overlayAdd.classList.remove("visible");
+  document.removeEventListener("keydown", closeOnEscape);
 }
 
 //Crear nuevas tarjetas
