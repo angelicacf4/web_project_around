@@ -1,39 +1,26 @@
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
+import {
+  settings,
+  closeOnEscape,
+  cerrarPopupWindow,
+  closePopup,
+  closeOverlayAdd,
+  closePopupWindow,
+  closeWindow,
+} from "./utils.js";
+
+const formAdd = document.querySelector("#formAdd");
+const formProfile = new FormValidator(miFormulario, settings);
+formProfile.enableValidation();
+const addCard = new FormValidator(formAdd, settings);
+addCard.enableValidation();
+
+const popupForm = document.querySelector("#miFormulario");
+const elementsCard = document.querySelector(".elements__card");
+
 const nameInput = document.querySelector("#name");
 const jobInput = document.querySelector("#job");
-const popupForm = document.querySelector("#miFormulario");
-
-//evento de clic en overlay (fuera del modal)
-const closePopup = document.querySelector(".popup");
-const closeOverlayAdd = document.querySelector("#overlayadd");
-const closePopupWindow = document.querySelector("#popupwindow");
-closePopup.addEventListener("click", (evt) => {
-  console.log(evt.target);
-  if (evt.target === closePopup) {
-    cerrarpopup();
-  }
-});
-closeOverlayAdd.addEventListener("click", (evt) => {
-  console.log(evt.target);
-  if (evt.target === closeOverlayAdd) {
-    cerrarOverlayadd();
-  }
-});
-closePopupWindow.addEventListener("click", (evt) => {
-  console.log(evt.target);
-  if (evt.target === closePopupWindow) {
-    cerrarPopupWindow();
-  }
-});
-
-// Cerrar con tecla ESC
-function closeOnEscape(evt) {
-  console.log("tecla presionada:", evt.key);
-  if (evt.key === "Escape") {
-    cerrarpopup();
-    cerrarOverlayadd();
-    cerrarPopupWindow();
-  }
-}
 
 //Formulario 1
 const openBtn = document.querySelector(".profile__button-edit");
@@ -79,11 +66,33 @@ function handlerprofileform(evt) {
 
 popupForm.addEventListener("submit", handlerprofileform);
 
-//Clonar tarjetas
-const templateCard = document.querySelector(".template");
-const elementsCard = document.querySelector(".elements__card");
-const cardLikeButton = document.querySelector(".card__like-button");
-const cardTrash = document.querySelector(".card__trash");
+//Formulario2
+//const popupContainerAdd = document.querySelector("#formAdd");
+const addBtn = document.querySelector(".profile__button");
+// Boton +
+addBtn.addEventListener("click", () => {
+  abrirOverlayAdd();
+});
+function abrirOverlayAdd(evt) {
+  let overlayadd = document.querySelector("#overlayadd");
+
+  overlayadd.classList.add("visible");
+  document.addEventListener("keydown", closeOnEscape);
+}
+// Boton x
+const deleteBtn = document.querySelector("#deleteBtn");
+deleteBtn.addEventListener("click", () => {
+  cerrarOverlayadd();
+});
+
+function cerrarOverlayadd(evt) {
+  let overlayAdd = document.querySelector("#overlayadd");
+
+  overlayAdd.classList.remove("visible");
+  document.removeEventListener("keydown", closeOnEscape);
+}
+
+//Clonar template
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -111,92 +120,15 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach(function (item) {
-  createCard(item.name, item.link);
+initialCards.forEach((item) => {
+  const card = new Card(item.name, item.link);
+  const cardElement = card.generateCard();
+  elementsCard.prepend(cardElement);
 });
-
-//Ventana emergente
-function abrirPopupWindow(evt) {
-  let popupWindow = document.querySelector("#popupwindow");
-  popupWindow.classList.add("visible");
-  document.addEventListener("keydown", closeOnEscape);
-}
-function cerrarPopupWindow(evt) {
-  let popupWindow = document.querySelector("#popupwindow");
-
-  popupWindow.classList.remove("visible");
-  document.removeEventListener("keydown", closeOnEscape);
-}
-
-function createCard(name, link) {
-  const clonedCard = templateCard.content
-    .querySelector(".card")
-    .cloneNode(true);
-  const cardText = clonedCard.querySelector(".card__text");
-  const cardImage = clonedCard.querySelector(".card__image");
-  const cardLikeButton = clonedCard.querySelector(".card__like-button");
-  const popupImage = document.querySelector(".popup__image");
-  const imageTitle = document.querySelector("#imagetitle");
-
-  cardText.textContent = name;
-  cardImage.src = link;
-  cardLikeButton.addEventListener("click", function () {
-    cardLikeButton.classList.toggle("card__like-black");
-  });
-
-  const cardTrash = clonedCard.querySelector(".card__trash");
-  cardTrash.addEventListener("click", function () {
-    clonedCard.remove();
-  });
-
-  cardImage.addEventListener("click", () => {
-    const imageSrc = cardImage.src;
-    const title = cardText.textContent;
-
-    console.log("click");
-    popupImage.src = imageSrc;
-    imageTitle.textContent = title;
-    abrirPopupWindow();
-  });
-
-  const closeWindow = document.querySelector("#closewindow");
-  closeWindow.addEventListener("click", () => {
-    cerrarPopupWindow();
-  });
-
-  elementsCard.prepend(clonedCard);
-}
-
-//Formulario2
-const popupContainerAdd = document.querySelector("#formAdd");
-const addBtn = document.querySelector(".profile__button");
-// Boton +
-addBtn.addEventListener("click", () => {
-  abrirOverlayAdd();
-});
-function abrirOverlayAdd(evt) {
-  let overlayadd = document.querySelector("#overlayadd");
-
-  overlayadd.classList.add("visible");
-  document.addEventListener("keydown", closeOnEscape);
-}
-// Boton x
-const deleteBtn = document.querySelector("#deleteBtn");
-deleteBtn.addEventListener("click", () => {
-  cerrarOverlayadd();
-});
-
-function cerrarOverlayadd(evt) {
-  let overlayAdd = document.querySelector("#overlayadd");
-
-  overlayAdd.classList.remove("visible");
-  document.removeEventListener("keydown", closeOnEscape);
-}
 
 //Crear nuevas tarjetas
 const titleInput = document.querySelector("#title");
 const urlInput = document.querySelector("#url");
-const formAdd = document.querySelector("#formAdd");
 
 function handlerCreateCard(evt) {
   evt.preventDefault();
@@ -207,9 +139,29 @@ function handlerCreateCard(evt) {
   const cardImage = document.querySelector(".card__image");
   console.log(cardImage.textContent);
   cardImage.textContent = urlInput.value;
-
-  createCard(titleInput.value, urlInput.value);
+  const card = new Card(titleInput.value, urlInput.value);
+  elementsCard.prepend(card.generateCard());
   cerrarOverlayadd();
 }
 
 formAdd.addEventListener("submit", handlerCreateCard);
+
+closePopup.addEventListener("click", (evt) => {
+  if (evt.target === closePopup) {
+    cerrarpopup();
+  }
+});
+closeOverlayAdd.addEventListener("click", (evt) => {
+  if (evt.target === closeOverlayAdd) {
+    cerrarOverlayadd();
+  }
+});
+closePopupWindow.addEventListener("click", (evt) => {
+  if (evt.target === closePopupWindow) {
+    cerrarPopupWindow();
+  }
+});
+
+closeWindow.addEventListener("click", () => {
+  cerrarPopupWindow();
+});
