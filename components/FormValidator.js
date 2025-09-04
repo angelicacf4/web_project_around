@@ -29,7 +29,7 @@ export default class FormValidator {
   }
 
   _validateButton() {
-    if (this.checkInputsValidity(this.inputList)) {
+    if (this._checkInputsValidity()) {
       this.buttonElement.disabled = true;
       this.buttonElement.classList.add(this._settings.inactiveButtonClass);
     } else {
@@ -38,8 +38,8 @@ export default class FormValidator {
     }
   }
 
-  checkInputsValidity(inputList) {
-    return inputList.some((input) => {
+  _checkInputsValidity() {
+    return this.inputList.some((input) => {
       return !input.validity.valid;
     });
   }

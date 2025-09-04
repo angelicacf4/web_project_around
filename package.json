@@ -1,0 +1,22 @@
+{
+  "name": "web_project_around",
+  "version": "1.0.0",
+  "description": "https://angelicacf4.github.io/web_project_around/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelicacf4/web_project_around.git"
+  },
+  "author": "Angélica Cuadros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelicacf4/web_project_around/issues"
+  },
+  "homepage": "https://github.com/angelicacf4/web_project_around#readme",
+  "dependencies": {
+    "jquery": "3.6.0"
+  }
+}
