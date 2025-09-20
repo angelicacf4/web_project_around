@@ -18,11 +18,20 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            src="images/JacquesCousteau.jpg"
-            alt="imagen de Jacques"
-            class="profile__image"
-          />
+          <div class="profile__image-container">
+            <img
+              src="images/JacquesCousteau.jpg"
+              alt="avatar"
+              class="profile__image"
+            />
+            <div id="btnAvatar" class="profile__edit">
+              <img
+                src="images/lapiz.svg"
+                alt="changeImage"
+                class="profile__edit profile__edit-avatar"
+              />
+            </div>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques cousteau</h1>
             <p class="profile__subtitle">Explorador</p>
@@ -45,6 +54,48 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
+
+      <!--ventana confirmacion de borrado de card-->
+      <div id="popupdeletecard" class="popup">
+        <div class="popup__container">
+          <form id="confirmacion" class="popup__form">
+            <h2 class="popup__title">¿Estás seguro/a?</h2>
+            <fieldset class="popup__fieldset">
+              <button class="popup__button-save" type="submit">Sí</button>
+            </fieldset>
+          </form>
+        </div>
+        <button type="submit" id="buttonclose" class="popup__button-close">
+          &#10006;
+        </button>
+      </div>
+
+      <!--ventana emergente imagen de perfil-->
+      <div id="avatar" class="popup">
+        <div class="popup__container" id="popupcontaineravatar">
+          <form id="fotoPerfil" class="popup__form">
+            <h2 class="popup__title">Cambiar foto de perfil</h2>
+            <fieldset class="popup__fieldset">
+              <input
+                type="url"
+                id="avatarImg"
+                name="url"
+                placeholder="Url de la imagen"
+                class="popup__input"
+                required
+                minlength="2"
+              />
+              <span class="popup__error" id="avatar-error"></span>
+            </fieldset>
+            <fieldset class="popup__fieldset">
+              <button class="popup__button-save" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+        <button type="button" id="buttonclose" class="popup__button-close">
+          &#10006;
+        </button>
+      </div>
 
       <!--formulario 1-->
       <div id="overlay" class="popup">

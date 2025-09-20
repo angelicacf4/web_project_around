@@ -8,4 +8,6 @@
 
 # sintaxis de desestructuracion una poderosa técnica para extraer y asignar valores de objetos y arrays.seguimos aprendiendo los principios de la programación orientada a objetos, y profundizamos en cómo interactúan los componentes de la interfaz y a gestionar dichas interacciones, cómo organizar el código utilizando la metodología POO, y a crear relaciones flexibles entre clases independientes.
 
+# En esta parte del proyecto 12 pude adquirir conocimiento sobre JavaScript asíncrono y a trabajar con APIs, aprendi a escribir aplicaciones modernas con código asíncrono, conceptos claves como: serTimeout y setInterval, callbacks, promesas(Promise) y a utilizar las APis para obtener datos del servidor, como uso de fetch para hacer peticones, métodos HTTP: GET, POST, PUT, DELETE.
+
 https://angelicacf4.github.io/web_project_around/

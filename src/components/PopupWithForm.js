@@ -1,9 +1,9 @@
 import Popup from "./Popup.js";
 
-export default class PopupwithForm extends Popup {
-  constructor(popupSelector, callback) {
+export default class popupWithForm extends Popup {
+  constructor(popupSelector, callback, loadingtext) {
     super(popupSelector);
-
+    this.loadingtext = loadingtext;
     this.handleSubmit = callback;
   }
 
@@ -23,15 +23,14 @@ export default class PopupwithForm extends Popup {
     super.close();
     this.formElement.reset();
   }
-
   setEventListeners() {
     this.formElement = this.popupElement.querySelector("form");
     super.setEventListeners();
     this.formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
-      console.log(this._getInputValues());
+      const btn = this.formElement.querySelector(".popup__button-save");
+      btn.innerText = this.loadingtext;
       this.handleSubmit(this._getInputValues());
-      this.close();
     });
   }
 }

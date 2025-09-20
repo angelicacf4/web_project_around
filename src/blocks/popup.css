@@ -10,6 +10,23 @@
   align-items: center;
   justify-content: center;
 }
+
+/*ventana condirmacion de borrado de card*/
+#popupdeletecard {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+/*Ventana emergente imagen perfil*/
+#avatar {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
 /*Formulario 1*/
 #overlay {
   width: 100%;
